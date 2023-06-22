@@ -22,7 +22,6 @@ connection.connect((err) => {
     console.log('Connected to MySQL database with threadId: ' + connection.threadId);
 });
 
-const port = 3000;
 app.get('/questions', (req, res) => {
     connection.query('SELECT * FROM questions', (error, results, fields) => {
         if (error) throw error;
@@ -40,4 +39,4 @@ app.get('/options/:id', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log('Listening on port 3001...'));
+app.listen(3000, () => console.log('Listening on port 3001...'));
