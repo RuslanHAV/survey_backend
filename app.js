@@ -6,10 +6,10 @@ const app = express();
 app.use(cors());
 
 const connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'survey'
+  host: "survey-do-user-14272629-0.b.db.ondigitalocean.com",
+  user: "doadmin1",
+  password: "AVNS_6a4QOsUDXyZB5txRhMM",
+  port: "25060"
 });
 
 connection.connect((err) => {
