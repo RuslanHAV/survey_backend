@@ -22,7 +22,7 @@ connection.connect((err) => {
     console.log('Connected to MySQL database with threadId: ' + connection.threadId);
 });
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/questions', (req, res) => {
     connection.query('SELECT * FROM questions', (error, results, fields) => {
