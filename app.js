@@ -5,22 +5,26 @@ const app = express();
 
 app.use(cors());
 
-const connection = mysql.createConnection({
-    host     : 'survey-do-user-14272629-0.b.db.ondigitalocean.com',
-    user     : 'doadmin1',
-    port     : '25060',
-    password : 'AVNS_6a4QOsUDXyZB5txRhMM',
-    database : 'survey'
+var con = mysql.createConnection({
+    host: "survey-do-user-14272629-0.b.db.ondigitalocean.com",
+    user: "doadmin1",
+    password: "AVNS_6a4QOsUDXyZB5txRhMM",
+    port: "25060"
+  });
+  
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
 });
 
-connection.connect((err) => {
-    if (err) {
-        console.error('Error connecting to MySQL database: ' + err.stack);
-        return;
-    }
+// connection.connect((err) => {
+//     if (err) {
+//         console.error('Error connecting to MySQL database: ' + err.stack);
+//         return;
+//     }
 
-    console.log('Connected to MySQL database with threadId: ' + connection.threadId);
-});
+//     console.log('Connected to MySQL database with threadId: ' + connection.threadId);
+// });
 
 const port = process.env.PORT || 443;
 
