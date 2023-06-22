@@ -22,21 +22,21 @@ connection.connect((err) => {
     console.log('Connected to MySQL database with threadId: ' + connection.threadId);
 });
 
-app.get('/questions', (req, res) => {
-    connection.query('SELECT * FROM questions', (error, results, fields) => {
-        if (error) throw error;
+// app.get('/questions', (req, res) => {
+//     connection.query('SELECT * FROM questions', (error, results, fields) => {
+//         if (error) throw error;
 
-        res.send(results);
-    });
-});
+//         res.send(results);
+//     });
+// });
 
-app.get('/options/:id', (req, res) => {
-    const questionId = req.params.id;
-    connection.query('SELECT * FROM options WHERE question_id=?', [questionId], (error, results, fields) => {
-        if (error) throw error;
+// app.get('/options/:id', (req, res) => {
+//     const questionId = req.params.id;
+//     connection.query('SELECT * FROM options WHERE question_id=?', [questionId], (error, results, fields) => {
+//         if (error) throw error;
 
-        res.send(results);
-    });
-});
+//         res.send(results);
+//     });
+// });
 
 app.listen(3001, () => console.log('Listening on port 3001...'));
