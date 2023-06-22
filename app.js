@@ -7,11 +7,10 @@ app.use(cors());
 
 const connection = mysql.createConnection({
     host     : 'survey-do-user-14272629-0.b.db.ondigitalocean.com',
-    user     : 'doadmin',
-    // port     : '25060',
+    user     : 'doadmin1',
+    port     : '25060',
     password : 'AVNS_8_9nUo_I4l__hPoIU1v',
     database : 'survey'
-    // connectTimeout: 30000
 });
 
 connection.connect((err) => {
