@@ -7,26 +7,22 @@ app.use(cors());
 
 var con = mysql.createConnection({
     host: "survey-do-user-14272629-0.b.db.ondigitalocean.com",
-    user: "doadmin1",
-    password: "AVNS_6a4QOsUDXyZB5txRhMM",
-    port: "25060"
+    user: "doadmin",
+    password: "AVNS_8_9nUo_I4l__hPoIU1v",
+    port: "25060",
+    database: 'survey'
   });
   
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to MySQL database: ' + err.stack);
+        return;
+    }
+
+    console.log('Connected to MySQL database with threadId: ' + connection.threadId);
 });
 
-// connection.connect((err) => {
-//     if (err) {
-//         console.error('Error connecting to MySQL database: ' + err.stack);
-//         return;
-//     }
-
-//     console.log('Connected to MySQL database with threadId: ' + connection.threadId);
-// });
-
-const port = process.env.PORT || 443;
+const port = 3000;
 
 app.get('/questions', (req, res) => {
     connection.query('SELECT * FROM questions', (error, results, fields) => {
