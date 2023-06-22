@@ -5,14 +5,13 @@ const app = express();
 
 app.use(cors());
 
-var connection = mysql.createConnection({
-    host: "survey-do-user-14272629-0.b.db.ondigitalocean.com",
-    user: "doadmin1",
-    password: "AVNS_6a4QOsUDXyZB5txRhMM",
-    port: "25060",
-    database: 'survey'
-  });
-  
+const connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : '',
+    database : 'survey'
+});
+
 connection.connect((err) => {
     if (err) {
         console.error('Error connecting to MySQL database: ' + err.stack);
@@ -21,6 +20,8 @@ connection.connect((err) => {
 
     console.log('Connected to MySQL database with threadId: ' + connection.threadId);
 });
+
+const port = process.env.PORT || 3000;
 
 app.get('/questions', (req, res) => {
     connection.query('SELECT * FROM questions', (error, results, fields) => {
@@ -39,4 +40,4 @@ app.get('/options/:id', (req, res) => {
     });
 });
 
-app.listen(3000, () => console.log('Listening on port 3001...'));
+app.listen(port, () => console.log(`Listening on port ${port}...`));
