@@ -7,8 +7,8 @@ app.use(cors());
 
 var connection = mysql.createConnection({
     host: "survey-do-user-14272629-0.b.db.ondigitalocean.com",
-    user: "doadmin",
-    password: "AVNS_8_9nUo_I4l__hPoIU1v",
+    user: "doadmin1",
+    password: "AVNS_6a4QOsUDXyZB5txRhMM",
     port: "25060",
     database: 'survey'
   });
