@@ -5,7 +5,7 @@ const app = express();
 
 app.use(cors());
 
-var con = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "survey-do-user-14272629-0.b.db.ondigitalocean.com",
     user: "doadmin",
     password: "AVNS_8_9nUo_I4l__hPoIU1v",
