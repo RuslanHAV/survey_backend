@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
     host     : 'survey-do-user-14272629-0.b.db.ondigitalocean.com',
     user     : 'doadmin1',
     port     : '25060',
-    password : 'AVNS_8_9nUo_I4l__hPoIU1v',
+    password : 'AVNS_6a4QOsUDXyZB5txRhMM',
     database : 'survey'
 });
 
